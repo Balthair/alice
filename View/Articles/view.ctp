@@ -4,7 +4,7 @@
 		
 		<section class="articleInto large-9 columns">
 			<div class="share">
-				<div class="fb-like" data-href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$article['Article']['id'].'-'.$article['Article']['permalink'])); ?>" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
+				<div class="fb-like" data-href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$article['Article']['id'].'-'.$article['Article']['permalink']),true); ?>" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
 				<div class="twitter">
 					<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
 				</div>
@@ -13,31 +13,34 @@
 				<span>Por: <?php echo $article['Editor']['nombre']; ?></span>
 			</div>
 			<div class="clear"></div>
-			<div class="imageInto">
-				<?php
-				$widthLarge = 0;
-				foreach ($article['Image'] as $I) {
-					$src = $I['seccion'].'/'.$I['id'].'.'.$I['extension'];
-					$this->Image->imagen(Configure::read('absolute_root').$src);
-					$widthImg = $this->Image->image_width;
-					if ($widthImg > $widthLarge) {
-						$srcSmall = @$srcLarge;
-						$srcLarge = $src;
-						$widthLarge = $widthImg;
-					} else {
-						$srcSmall = $src;
+			<?php if (!empty($article['Image'])): ?>
+				
+				<div class="imageInto">
+					<?php
+					$widthLarge = 0;
+					foreach ($article['Image'] as $I) {
+						$src = $I['seccion'].'/'.$I['id'].'.'.$I['extension'];
+						$this->Image->imagen(Configure::read('absolute_root').$src);
+						$widthImg = $this->Image->image_width;
+						if ($widthImg > $widthLarge) {
+							$srcSmall = @$srcLarge;
+							$srcLarge = $src;
+							$widthLarge = $widthImg;
+						} else {
+							$srcSmall = $src;
+						}
 					}
-				}
-				?>
-				<img src="<?php echo $this->Html->url('/files/'.$srcLarge); ?>" data-interchange="[<?php echo $this->Html->url('/files/'.$srcSmall); ?>, (only screen and (min-width: 1px))], [<?php echo $this->Html->url('/files/'.$srcLarge); ?>, (only screen and (min-width: 769px))]">
-			</div>
+					?>
+					<img src="<?php echo $this->Html->url('/files/'.$srcLarge); ?>" data-interchange="[<?php echo $this->Html->url('/files/'.$srcSmall); ?>, (only screen and (min-width: 1px))], [<?php echo $this->Html->url('/files/'.$srcLarge); ?>, (only screen and (min-width: 769px))]">
+				</div>
+			<?php endif ?>
 			<div class="intro">
 				<?php echo $article['Article']['intro']; ?>
 			</div>
 			<article class="artText">
 				<?php echo $article['Article']['contenido']; ?>
 			</article>
-			<div class="fb-comments" data-href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$article['Article']['id'].'-'.$article['Article']['permalink'])); ?>" data-numposts="5" data-width="935"></div>
+			<div class="fb-comments" data-href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$article['Article']['id'].'-'.$article['Article']['permalink']),true); ?>" data-numposts="5" data-width="935"></div>
 		</section>
 		<aside class="asideR large-3 columns">
 			<div class="otherArt">

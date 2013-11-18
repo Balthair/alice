@@ -6,22 +6,26 @@
 			<div class="large-12 columns">
 				<h1><?php echo $galery['Albume']['nombre']; ?></h1>
 				<div class="share">
-					<div class="fb-like" data-href="<?php echo $this->Html->url(array('controller'=>'Galery','action'=>'view','title'=>$galery['Albume']['id'].'-'.$galery['Albume']['permalink'])); ?>" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
+					<div class="fb-like" data-href="<?php echo $this->Html->url(array('controller'=>'Galery','action'=>'view','title'=>$galery['Albume']['id'].'-'.$galery['Albume']['permalink']),true); ?>" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
 					<div class="twitter">
 						<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
 					</div>
 				</div>
 				<?php foreach ($galery['Image'] as $Img) {
+
+					if (file_exists(Configure::read('absolute_root').$Img['seccion'].'/'.$Img['id'].'.'.$Img['extension'])) {
 					
 					echo $this->Html->image(
 			    		'/files/'.$Img['seccion'].'/'.$Img['id'].'.'.$Img['extension'],
 			    		array(
 			    			'class' => 'galImg'
 			    		)
-			    	);	
+			    	);
+
+			    	}	
 
 				} ?>
-				<div class="fb-comments" data-href="<?php echo $this->Html->url(array('controller'=>'Galery','action'=>'view','title'=>$galery['Albume']['id'].'-'.$galery['Albume']['permalink'])); ?>" data-numposts="5" data-width="1232"></div>
+				<div class="fb-comments" data-href="<?php echo $this->Html->url(array('controller'=>'Galery','action'=>'view','title'=>$galery['Albume']['id'].'-'.$galery['Albume']['permalink']),true); ?>" data-numposts="5" data-width="1232"></div>
 			</div>
 			<div class="clear"></div>
 		</div>

@@ -3247,6 +3247,7 @@ label.error {
       display: block;
       max-width: 100%; }
     .orbit-container .orbit-slides-container > * {
+      background: #f5f5f5;
       position: absolute;
       top: 0;
       width: 100%;

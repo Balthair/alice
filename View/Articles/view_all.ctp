@@ -11,20 +11,25 @@
 								<a href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$aS['Article']['id'].'-'.$aS['Article']['permalink'])); ?>">
 									<div class="image">
 										<?php
-										$widthSmall = 1280;
-										foreach ($aS['Image'] as $I) {
-											$src = $I['id'].'.'.$I['extension'];
-											$this->Image->imagen(Configure::read('absolute_root').$I['seccion'].'/'.$src);
-											$widthImg = $this->Image->image_width;
-											if ($widthImg < $widthSmall) {
-												$srcSmall = $src;
-												$widthSmall = $widthImg;
+										if (!empty($aS['Image'])) {
+											$widthSmall = 1280;
+											foreach ($aS['Image'] as $I) {
+												$src = $I['id'].'.'.$I['extension'];
+												$this->Image->imagen(Configure::read('absolute_root').$I['seccion'].'/'.$src);
+												$widthImg = $this->Image->image_width;
+												if ($widthImg < $widthSmall) {
+													$srcSmall = $src;
+													$widthSmall = $widthImg;
+												}
 											}
-										}
-						    			?>
-										<?php echo $this->Html->image(
-								    		'/files/'.$I['seccion'].'/'.'thumbs/'.$srcSmall
-								    	); ?>
+							    			echo $this->Html->image(
+									    		'/files/'.$I['seccion'].'/'.'thumbs/'.$srcSmall
+									    	);
+									    } else {
+						    				echo $this->Html->image(
+									    		'/files/defaultSmall.png'
+									    	);
+						    			} ?>
 									</div>
 									<div class="content">
 										<h2><?php echo $aS['Article']['titulo']; ?></h2>

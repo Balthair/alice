@@ -5610,6 +5610,7 @@ Stack Trace:
 #11 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #12 {main}
 >>>>>>> 4dbfa51eb215c1da392e095839164ee747aad661
+<<<<<<< HEAD
 2013-11-14 14:09:33 Error: [MissingControllerException] Controller class FilesController could not be found.
 Exception Attributes: array (
   'class' => 'FilesController',
@@ -5656,10 +5657,23 @@ Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 2013-11-14 14:09:33 Error: [MissingControllerException] Controller class FilesController could not be found.
+=======
+2013-11-14 16:05:49 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /alice/images/uploadifive-cancel.png
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-14 16:05:52 Error: [MissingControllerException] Controller class FilesController could not be found.
+>>>>>>> 346cee4f141b70df11176dac55112e52d3edcf16
 Exception Attributes: array (
   'class' => 'FilesController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /alice/files/albumes/thumbs/21.jpg
 Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
@@ -5683,19 +5697,53 @@ Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 2013-11-14 14:09:44 Error: [MissingControllerException] Controller class FilesController could not be found.
+=======
+Request URL: /alice/files/Editions/79.png
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-14 16:18:03 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /alice/images/uploadifive-cancel.png
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-14 16:18:30 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /alice/images/uploadifive-cancel.png
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-14 16:29:36 Error: [MissingControllerException] Controller class FilesController could not be found.
+>>>>>>> 346cee4f141b70df11176dac55112e52d3edcf16
 Exception Attributes: array (
   'class' => 'FilesController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /alice/files/editions/18.jpg
 Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 2013-11-14 14:09:44 Error: [MissingControllerException] Controller class FilesController could not be found.
+=======
+Request URL: /alice/files/thumbs/
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-14 16:35:01 Error: [MissingControllerException] Controller class FilesController could not be found.
+>>>>>>> 346cee4f141b70df11176dac55112e52d3edcf16
 Exception Attributes: array (
   'class' => 'FilesController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /alice/files/albumes/thumbs/23.jpg
 Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
@@ -5710,46 +5758,96 @@ Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 2013-11-14 14:09:44 Error: [MissingControllerException] Controller class FilesController could not be found.
+=======
+Request URL: /alice/files/thumbs/
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-14 16:40:15 Error: Fatal Error (4): syntax error, unexpected '}' in [C:\wamp\www\alice\View\Home\index.ctp, line 25]
+2013-11-14 16:40:15 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /alice/home
+Stack Trace:
+#0 C:\wamp\www\cakephp2.3.6\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\wamp\www\ali...', 25)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\wamp\www\ali...', 25, Array)
+#2 C:\wamp\www\cakephp2.3.6\lib\Cake\Core\App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\wamp\www\ali...', 25, Array)
+#3 C:\wamp\www\cakephp2.3.6\lib\Cake\Core\App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-14 16:40:30 Error: [MissingControllerException] Controller class FilesController could not be found.
+>>>>>>> 346cee4f141b70df11176dac55112e52d3edcf16
 Exception Attributes: array (
   'class' => 'FilesController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /alice/files/albumes/thumbs/21.jpg
 Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 2013-11-14 14:09:44 Error: [MissingControllerException] Controller class FilesController could not be found.
+=======
+Request URL: /alice/files/thumbs/
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-14 16:41:39 Error: [MissingControllerException] Controller class FilesController could not be found.
+>>>>>>> 346cee4f141b70df11176dac55112e52d3edcf16
 Exception Attributes: array (
   'class' => 'FilesController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /alice/files/albumes/thumbs/24.jpg
 Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 2013-11-14 14:09:44 Error: [MissingControllerException] Controller class FilesController could not be found.
+=======
+Request URL: /alice/files/thumbs/
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-14 16:47:37 Error: [MissingControllerException] Controller class FilesController could not be found.
+>>>>>>> 346cee4f141b70df11176dac55112e52d3edcf16
 Exception Attributes: array (
   'class' => 'FilesController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /alice/files/albumes/thumbs/22.jpg
 Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 2013-11-14 14:09:44 Error: [MissingControllerException] Controller class FilesController could not be found.
+=======
+Request URL: /alice/files/thumbs/
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-14 16:49:18 Error: [MissingControllerException] Controller class FilesController could not be found.
+>>>>>>> 346cee4f141b70df11176dac55112e52d3edcf16
 Exception Attributes: array (
   'class' => 'FilesController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /alice/files/albumes/thumbs/20.jpg
 Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 2013-11-14 14:09:45 Error: [MissingControllerException] Controller class FilesController could not be found.
+=======
+Request URL: /alice/files/thumbs/
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-14 16:49:41 Error: [MissingControllerException] Controller class FilesController could not be found.
+>>>>>>> 346cee4f141b70df11176dac55112e52d3edcf16
 Exception Attributes: array (
   'class' => 'FilesController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /alice/files/albumes/thumbs/19.jpg
 Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
@@ -5764,46 +5862,86 @@ Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 2013-11-14 14:10:53 Error: [MissingControllerException] Controller class FilesController could not be found.
+=======
+Request URL: /alice/files/thumbs/
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-14 16:50:18 Error: [MissingControllerException] Controller class FilesController could not be found.
+>>>>>>> 346cee4f141b70df11176dac55112e52d3edcf16
 Exception Attributes: array (
   'class' => 'FilesController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /alice/files/albumes/thumbs/24.jpg
 Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 2013-11-14 14:10:53 Error: [MissingControllerException] Controller class FilesController could not be found.
+=======
+Request URL: /alice/files/thumbs/
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-14 16:53:12 Error: [MissingControllerException] Controller class FilesController could not be found.
+>>>>>>> 346cee4f141b70df11176dac55112e52d3edcf16
 Exception Attributes: array (
   'class' => 'FilesController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /alice/files/albumes/thumbs/21.jpg
 Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 2013-11-14 14:10:53 Error: [MissingControllerException] Controller class FilesController could not be found.
+=======
+Request URL: /alice/files/thumbs/image2.png
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-14 16:54:08 Error: [MissingControllerException] Controller class FilesController could not be found.
+>>>>>>> 346cee4f141b70df11176dac55112e52d3edcf16
 Exception Attributes: array (
   'class' => 'FilesController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /alice/files/editions/17.jpg
 Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 2013-11-14 14:10:53 Error: [MissingControllerException] Controller class FilesController could not be found.
+=======
+Request URL: /alice/files/thumbs/image2.png
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-14 16:54:27 Error: [MissingControllerException] Controller class FilesController could not be found.
+>>>>>>> 346cee4f141b70df11176dac55112e52d3edcf16
 Exception Attributes: array (
   'class' => 'FilesController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /alice/files/albumes/thumbs/22.jpg
 Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 2013-11-14 14:10:53 Error: [MissingControllerException] Controller class FilesController could not be found.
+=======
+Request URL: /alice/files/thumbs/image2.png
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-14 16:58:35 Error: [MissingControllerException] Controller class FilesController could not be found.
+>>>>>>> 346cee4f141b70df11176dac55112e52d3edcf16
 Exception Attributes: array (
   'class' => 'FilesController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /alice/files/editions/18.jpg
 Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
@@ -5818,19 +5956,45 @@ Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 2013-11-14 14:10:53 Error: [MissingControllerException] Controller class FilesController could not be found.
+=======
+Request URL: /alice/files/thumbs/image2.png
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-14 17:01:10 Error: Fatal Error (4): syntax error, unexpected ';' in [C:\wamp\www\alice\View\Home\index.ctp, line 98]
+2013-11-14 17:01:10 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /alice/home
+Stack Trace:
+#0 C:\wamp\www\cakephp2.3.6\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\wamp\www\ali...', 98)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\wamp\www\ali...', 98, Array)
+#2 C:\wamp\www\cakephp2.3.6\lib\Cake\Core\App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\wamp\www\ali...', 98, Array)
+#3 C:\wamp\www\cakephp2.3.6\lib\Cake\Core\App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-14 17:01:18 Error: [MissingControllerException] Controller class FilesController could not be found.
+>>>>>>> 346cee4f141b70df11176dac55112e52d3edcf16
 Exception Attributes: array (
   'class' => 'FilesController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /alice/files/albumes/thumbs/20.jpg
 Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 2013-11-14 14:10:53 Error: [MissingControllerException] Controller class FilesController could not be found.
+=======
+Request URL: /alice/files/Articles/thumbs/image2.png
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-14 17:04:15 Error: [MissingControllerException] Controller class FilesController could not be found.
+>>>>>>> 346cee4f141b70df11176dac55112e52d3edcf16
 Exception Attributes: array (
   'class' => 'FilesController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /alice/files/albumes/thumbs/19.jpg
 Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
@@ -5862,3 +6026,19 @@ Request URL: /alice/config.xml
 Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+=======
+Request URL: /alice/files/thumbs/
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-14 17:34:48 Error: Fatal Error (4): syntax error, unexpected ')', expecting ',' or ';' in [C:\wamp\www\alice\View\Galery\view_all.ctp, line 12]
+2013-11-14 17:34:48 Error: [FatalErrorException] syntax error, unexpected ')', expecting ',' or ';'
+Request URL: /alice/Galery/viewAll
+Stack Trace:
+#0 C:\wamp\www\cakephp2.3.6\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\wamp\www\ali...', 12)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\wamp\www\ali...', 12, Array)
+#2 C:\wamp\www\cakephp2.3.6\lib\Cake\Core\App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\wamp\www\ali...', 12, Array)
+#3 C:\wamp\www\cakephp2.3.6\lib\Cake\Core\App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+>>>>>>> 346cee4f141b70df11176dac55112e52d3edcf16

@@ -7,19 +7,24 @@
 			    	<a href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$lA['Article']['id'].'-'.$lA['Article']['permalink'])); ?>">
 			    		<div class="image">
 			    			<?php
-							$widthLarge = 0;
-							foreach ($lA['Image'] as $I) {
-								$src = $I['seccion'].'/'.$I['id'].'.'.$I['extension'];
-								$this->Image->imagen(Configure::read('absolute_root').$src);
-								$widthImg = $this->Image->image_width;
-								if ($widthImg > $widthLarge) {
-									$srcSmall = @$srcLarge;
-									$srcLarge = $src;
-									$widthLarge = $widthImg;
-								} else {
-									$srcSmall = $src;
+			    			if (!empty($lA['Image'])) {
+								$widthLarge = 0;
+								foreach ($lA['Image'] as $I) {
+									$src = $I['seccion'].'/'.$I['id'].'.'.$I['extension'];
+									$this->Image->imagen(Configure::read('absolute_root').$src);
+									$widthImg = $this->Image->image_width;
+									if ($widthImg > $widthLarge) {
+										$srcSmall = @$srcLarge;
+										$srcLarge = $src;
+										$widthLarge = $widthImg;
+									} else {
+										$srcSmall = $src;
+									}
 								}
-							}
+			    			} else {
+			    				$srcLarge = 'defaultLarge.jpg';
+			    				$srcSmall = 'defaultSmall.jpg';
+			    			}
 			    			?>
 			    			<img src="<?php echo $this->Html->url('/files/'.$srcLarge); ?>" data-interchange="[<?php echo $this->Html->url('/files/'.$srcSmall); ?>, (only screen and (min-width: 1px))], [<?php echo $this->Html->url('/files/'.$srcLarge); ?>, (only screen and (min-width: 769px))]">
 			    		</div>
@@ -72,20 +77,28 @@
 							<a href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$lA['Article']['id'].'-'.$lA['Article']['permalink'])); ?>">
 								<div class="image">
 									<?php
-									$widthSmall = 1280;
-									foreach ($lA['Image'] as $I) {
-										$src = $I['id'].'.'.$I['extension'];
-										$this->Image->imagen(Configure::read('absolute_root').$I['seccion'].'/'.$src);
-										$widthImg = $this->Image->image_width;
-										if ($widthImg < $widthSmall) {
-											$srcSmall = $src;
-											$widthSmall = $widthImg;
+									if (!empty($lA['Image'])) {
+										$widthSmall = 1280;
+										foreach ($lA['Image'] as $I) {
+											$src = $I['id'].'.'.$I['extension'];
+											$this->Image->imagen(Configure::read('absolute_root').'Articles/'.$src);
+											$widthImg = $this->Image->image_width;
+											if ($widthImg < $widthSmall) {
+												$srcSmall = $src;
+												$widthSmall = $widthImg;
+											}
 										}
-									}
+
+										echo $this->Html->image(
+								    		'/files/Articles/'.'thumbs/'.$srcSmall
+								    	);
+
+									} else {
+					    				echo $this->Html->image(
+								    		'/files/defaultSmall.jpg'
+								    	);
+					    			}
 					    			?>
-									<?php echo $this->Html->image(
-							    		'/files/'.$I['seccion'].'/'.'thumbs/'.$srcSmall
-							    	); ?>
 								</div>
 								<div class="content">
 									<h2><?php echo $lA['Article']['titulo']; ?></h2>

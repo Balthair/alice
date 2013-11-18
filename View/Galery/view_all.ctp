@@ -9,15 +9,18 @@
 					<div id="slide">
 						<ul data-orbit data-options="bullets:false;animation_speed:300;timer_speed:4000;animation:'fade';resume_on_mouseout:true;slide_number:false;">
 							<?php foreach ($galeryP['Image'] as $Img): ?>
-								
-							  	<li>		
-						    		<div class="image">
-								    	<?php echo $this->Html->image(
-								    		'/files/'.$Img['seccion'].'/'.$Img['id'].'.'.$Img['extension']
-								    	); ?>
-						    		</div>
-							  	</li>
 
+								<?php if (file_exists(Configure::read('absolute_root').$Img['seccion'].'/'.$Img['id'].'.'.$Img['extension'])): ?>
+									
+								  	<li>		
+							    		<div class="image">
+									    	<?php echo $this->Html->image(
+									    		'/files/'.$Img['seccion'].'/'.$Img['id'].'.'.$Img['extension']
+									    	); ?>
+							    		</div>
+								  	</li>
+
+								<?php endif ?>
 							<?php endforeach ?>
 						  	
 						</ul>
