@@ -79,7 +79,7 @@ class ArticlesController extends AppController {
 		$relevancias = $this->Article->Relevancia->find('list');
 		$users = $this->Article->User->find('list');
 		//$this->loadModel('Albume');
-		$albumes = $this->Article->Albume->find('list');
+		//$albumes = $this->Article->Albume->find('list');
 		$this->set(compact('editors', 'editions', 'categorias', 'relevancias', 'users','albumes'));
 	}
 
@@ -150,10 +150,11 @@ class ArticlesController extends AppController {
 	public function viewAll() {
 
 		$this->loadModel('Categoria');
+		$this->loadModel('Editor');
 		$this->loadModel('Ad');
 
-		$title_for_layout = 'Articulos';
-		$title_for_section = 'Articulos';
+		$title_for_layout = 'Artículos';
+		$title_for_section = 'Artículos';
 
     	$this->paginate = array(
 			'order' => array(
@@ -197,12 +198,47 @@ class ArticlesController extends AppController {
 
                 } else {
 
-                    $title_for_layout = 'Articulos';
-                    $title_for_section = 'Articulos';
+                    $title_for_layout = 'Artículos';
+                    $title_for_section = 'Artículos';
 
                 }
 
             }
+
+        } elseif (isset($_GET['author'])) {
+        	
+        	$author = $_GET['author'];
+
+        	if (!empty($author) and $author != '') {
+        		
+        		$this->Editor->unbindModel(
+        			array('hasMany' => array('Article'))
+        		);
+
+        		$aut = $this->Editor->find(
+        			'first',
+        			array(
+        				'conditions' => array(
+        					'permalink' => $author
+        				)
+        			)
+        		);
+
+        		if (!empty($aut) and $aut != '') {
+        			
+        			$articles = $this->paginate(
+        				'Article',
+        				array(
+        					'Article.editor_id' => $aut['Editor']['id']
+        				)
+        			);
+
+        		}
+
+        		$title_for_layout = 'Artículos de '.$aut['Editor']['nombre'];
+                $title_for_section = 'Artículos de '.$aut['Editor']['nombre'];
+
+        	}
 
         } elseif (isset($_GET['keyword'])) {
 
@@ -276,7 +312,9 @@ class ArticlesController extends AppController {
                 'title_for_section' => @$title_for_section,
                 'pubArtV' => @$pubArtV,
                 'pubArtH' => @$pubArtH,
-                'categoria' => @$categoria
+                'categoria' => @$categoria,
+                'author' => @$author,
+                'perfil' => @$aut
             )
         );
 

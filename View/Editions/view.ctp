@@ -74,14 +74,18 @@
 								    		'/files/'.$I['seccion'].'/'.'thumbs/'.$srcSmall
 								    	); ?>
 									</div>
-									<div class="content">
-										<h2><?php echo $aS['Article']['titulo']; ?></h2>
-										<span class="editor"><?php echo $aS['Editor']['nombre']; ?></span>
-										<div class="text">
-											<?php echo $aS['Article']['intro']; ?>
-										</div>
-									</div>
 								</a>
+								<div class="content">
+									<a href="<?php echo ($aS['Article']['albume_id']==0)?$this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$aS['Article']['id'].'-'.$aS['Article']['permalink'])):$this->Html->url(array('controller'=>'Galery','action'=>'view','title'=>$aS['Albume']['id'].'-'.$aS['Albume']['permalink'])); ?>">
+										<h2><?php echo $aS['Article']['titulo']; ?></h2>
+									</a>
+									<a href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'viewAll?author='.$aS['Editor']['permalink'])); ?>">
+										<span class="editor"><?php echo $aS['Editor']['nombre']; ?></span>
+									</a>
+									<div class="text">
+										<?php echo $aS['Article']['intro']; ?>
+									</div>
+								</div>
 								<div class="clear"></div>
 							</div>
 						<?php endforeach ?>
@@ -107,29 +111,33 @@
 			</div>
 			<div class="clear"></div>
 		</div>
-		<div class="EditionsBottom">
-			<h4 class="titleB">Ediciones</h4>
-			<div>
-				<?php foreach ($lastEditions as $lE): ?>
-					<div class="edit large-3 columns">
-						<a href="<?php echo $this->Html->url(array('controller'=>'Editions','action'=>'view','title'=>$lE['Edition']['id'].'-'.$lE['Edition']['permalink'])); ?>">
-							<div class="image">
-								<?php echo $this->Html->image(
-						    		'/files/'.$lE['Image']['seccion'].'/'.$lE['Image']['id'].'.'.$lE['Image']['extension'],
-						    		array(
-						    			'alt' => $lE['Edition']['nombre'],
-						    		)
-						    	); ?>
-								<div class="text">
-									<h3><?php echo $lE['Edition']['nombre']; ?></h3>
+		<?php if (!empty($lastEditions)): ?>
+			
+			<div class="EditionsBottom">
+				<h4 class="titleB">Ediciones</h4>
+				<div>
+					<?php foreach ($lastEditions as $lE): ?>
+						<div class="edit large-3 columns">
+							<a href="<?php echo $this->Html->url(array('controller'=>'Editions','action'=>'view','title'=>$lE['Edition']['id'].'-'.$lE['Edition']['permalink'])); ?>">
+								<div class="image">
+									<?php echo $this->Html->image(
+							    		'/files/'.$lE['Image']['seccion'].'/'.$lE['Image']['id'].'.'.$lE['Image']['extension'],
+							    		array(
+							    			'alt' => $lE['Edition']['nombre'],
+							    		)
+							    	); ?>
+									<div class="text">
+										<h3><?php echo $lE['Edition']['nombre']; ?></h3>
+									</div>
 								</div>
-							</div>
-						</a>
-					</div>
-				<?php endforeach ?>
+							</a>
+						</div>
+					<?php endforeach ?>
+				</div>
+				<div class="clear"></div>
 			</div>
-			<div class="clear"></div>
-		</div>
+			
+		<?php endif ?>
 
 	<?php else: ?>
 

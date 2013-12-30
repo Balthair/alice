@@ -4,8 +4,25 @@
 		<legend><?php echo __('Agregar Editor'); ?></legend>
 	<?php
 		echo $this->Form->input('nombre',array('class'=>'form-control'));
-		echo $this->Form->input('perfil',array('class'=>'form-control'));
+		echo $this->Form->input('perfil',array('class'=>'form-control wysiwyg'));
 	?>
+	<script>
+		$(function(){
+			tinymce.init({
+		      relative_urls: false,
+		      selector: "textarea.wysiwyg",
+		      plugins: [
+		                "advlist autolink link image lists charmap print preview hr anchor pagebreak",
+		                "searchreplace wordcount visualblocks visualchars code insertdatetime media nonbreaking",
+		                "table contextmenu directionality emoticons paste textcolor filemanager"
+		            ],
+		            image_advtab: true,
+		      toolbar: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link | image | preview code",
+		      height : 300,
+		      resize : false
+		  });
+		});
+	</script>
 	<div class="head_upload">
 		<input id="file_upload" name="file_upload" type="file" multiple="false">
 		<a class="upload_all btn btn-success" style="position: relative;" href="javascript:$('#file_upload').uploadifive('upload')" title="Subir Archivos">

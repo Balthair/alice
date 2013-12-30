@@ -124,20 +124,32 @@
 </nav>
 <div class="social">
 	<?php 
-	echo $this->Html->image(
-		'facebook.png',
-		array(
-			'alt' => 'Facebook Alice Revista',
-			'url' => 'https://www.facebook.com/pages/Revista-Alice/170806799626737'
-		)
-	);
-	echo $this->Html->image(
-		'twitter.png',
-		array(
-			'alt' => 'Twitter Alice Revista',
-			'url' => 'https://www.twitter.com/'
-		)
-	); 
+      echo $this->Html->link(
+            $this->Html->image(
+                  'facebook.png',
+                  array(
+                        'alt' => 'Facebook'
+                  )
+            ),
+            'https://www.facebook.com/pages/Revista-Alice/170806799626737',
+            array(
+                  'target' =>'_blank',
+                  'escape' => false
+            )
+      );
+      echo $this->Html->link(
+            $this->Html->image(
+                  'twitter.png',
+                  array(
+                        'alt' => 'Twitter'
+                  )
+            ),
+            'http://twitter.com',
+            array(
+                  'target' =>'_blank',
+                  'escape' => false
+            )
+      );
 	?>
 </div>
 <div id="logo">

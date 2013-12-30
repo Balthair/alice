@@ -11,7 +11,9 @@
 				</div>
 			</div>
 			<div class="artAuthor">
-				<span>Por: <?php echo $article['Editor']['nombre']; ?></span>
+				<a href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'viewAll?author='.$article['Editor']['permalink'])); ?>">
+					<span>Por: <?php echo $article['Editor']['nombre']; ?></span>
+				</a>
 			</div>
 			<div class="clear"></div>
 			<?php if (!empty($article['Image'])): ?>
@@ -34,8 +36,8 @@
 					?>
 					<img src="<?php echo $this->Html->url('/files/'.$srcLarge); ?>" data-interchange="[<?php echo $this->Html->url('/files/'.$srcSmall); ?>, (only screen and (min-width: 1px))], [<?php echo $this->Html->url('/files/'.$srcLarge); ?>, (only screen and (min-width: 769px))]">
 				</div>
-				<?php if (!empty($article['Photographer']['nombre'])): ?>
-					<span class="photo">Fotograf&iacute;a: <?php echo $article['Photographer']['nombre']; ?></span>
+				<?php if (!empty($article['Article']['pie_foto'])): ?>
+					<span class="photo"><?php echo $article['Article']['pie_foto']; ?></span>
 				<?php endif ?>
 			<?php endif ?>
 			<div class="intro">
@@ -96,40 +98,47 @@
 			</div>
 		</aside>
 		<div class="clear"></div>
-		<aside class="asideB">
-			<div class="title columns">
-				<span>Otros art&iacute;culos del autor</span>
-			</div>
-			<div class="content columns">
-				<ul>
-					<?php foreach ($moreOfEditor as $Ed): ?>
-						<li class="otherB">
-							<a href="<?php echo ($Ed['Article']['albume_id']==0)?$this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$Ed['Article']['id'].'-'.$Ed['Article']['permalink'])):$this->Html->url(array('controller'=>'Galery','action'=>'view','title'=>$Ed['Albume']['id'].'-'.$Ed['Albume']['permalink'])); ?>">
-								<?php
-								$widthSmall = 1280;
-								foreach ($Ed['Image'] as $I) {
-									$src = $I['id'].'.'.$I['extension'];
-									$this->Image->imagen(Configure::read('absolute_root').$I['seccion'].'/'.$src);
-									$widthImg = $this->Image->image_width;
-									if ($widthImg < $widthSmall) {
-										$srcSmall = $src;
-										$widthSmall = $widthImg;
+
+		<?php if (!empty($moreOfEditor)): ?>
+			
+			<aside class="asideB">
+				<div class="title columns">
+					<a href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'viewAll?author='.$article['Editor']['permalink'])); ?>">
+						<span>Otros art&iacute;culos del autor</span>
+					</a>
+				</div>
+				<div class="content columns">
+					<ul>
+						<?php foreach ($moreOfEditor as $Ed): ?>
+							<li class="otherB">
+								<a href="<?php echo ($Ed['Article']['albume_id']==0)?$this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$Ed['Article']['id'].'-'.$Ed['Article']['permalink'])):$this->Html->url(array('controller'=>'Galery','action'=>'view','title'=>$Ed['Albume']['id'].'-'.$Ed['Albume']['permalink'])); ?>">
+									<?php
+									$widthSmall = 1280;
+									foreach ($Ed['Image'] as $I) {
+										$src = $I['id'].'.'.$I['extension'];
+										$this->Image->imagen(Configure::read('absolute_root').$I['seccion'].'/'.$src);
+										$widthImg = $this->Image->image_width;
+										if ($widthImg < $widthSmall) {
+											$srcSmall = $src;
+											$widthSmall = $widthImg;
+										}
 									}
-								}
-				    			?>
-								<?php echo $this->Html->image(
-						    		'/files/'.$I['seccion'].'/'.'thumbs/'.$srcSmall
-						    	); ?>
-								<div class="title">
-									<h4><?php echo $Ed['Article']['titulo']; ?></h4>
-								</div>
-							</a>
-						</li>
-					<?php endforeach ?>
-				</ul>
-			</div>
-			<div class="clear"></div>
-		</aside>
+					    			?>
+									<?php echo $this->Html->image(
+							    		'/files/'.$I['seccion'].'/'.'thumbs/'.$srcSmall
+							    	); ?>
+									<div class="title">
+										<h4><?php echo $Ed['Article']['titulo']; ?></h4>
+									</div>
+								</a>
+							</li>
+						<?php endforeach ?>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</aside>
+			
+		<?php endif ?>
 	
 		<?php if (!empty($pubArtH['Image'])): ?>
 

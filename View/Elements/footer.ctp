@@ -2,22 +2,36 @@
 	<span class="title-footer">S&iacute;guenos</span>
 	<ul class="">
   		<li class="socialF">
-  			<?php echo $this->Html->image(
-  				'facebook.png',
+      		<?php echo $this->Html->link(
+  				$this->Html->image(
+	  				'facebook.png',
+	  				array(
+	  					'alt' => 'Facebook',
+	            		'style' => 'width:30px;',
+	  				)
+  				),
+  				'https://www.facebook.com/pages/Revista-Alice/170806799626737',
   				array(
-  					'alt' => 'Facebook',
-            		'style' => 'width:30px;',
-  					'url' => 'https://www.facebook.com/pages/Revista-Alice/170806799626737'
+  					'target' =>'_blank',
+  					'escape' => false
   				)
-      		); ?>
-  			<?php echo $this->Html->image(
-  				'twitter.png',
+  			); 
+  			?>
+  			<?php echo $this->Html->link(
+  				$this->Html->image(
+	  				'twitter.png',
+	  				array(
+	  					'alt' => 'Twitter',
+	            		'style' => 'width:30px;',
+	  				)
+  				),
+  				'http://twitter.com',
   				array(
-  					'alt' => 'Twitter',
-            		'style' => 'width:30px;',
-  					'url' => 'http://twitter.com'
+  					'target' =>'_blank',
+  					'escape' => false
   				)
-  			); ?>
+  			); 
+  			?>
       	</li>
 	</ul>
 </div>

@@ -1036,6 +1036,7 @@ Stack Trace:
 #0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 Request URL: /alice/files/thumbs/
 Stack Trace:
@@ -1052,6 +1053,54 @@ Stack Trace:
 #4 [internal function]: App::shutdown()
 #5 {main}
 >>>>>>> 346cee4f141b70df11176dac55112e52d3edcf16
+=======
+2013-11-23 14:32:29 Error: Fatal Error (1): Maximum execution time of 30 seconds exceeded in [C:\wamp\www\cakephp2.3.6\lib\Cake\Model\Datasource\DboSource.php, line 460]
+2013-11-23 14:32:34 Error: [InternalErrorException] Internal Server Error
+Request URL: /alice/Articles/viewAll?x=-1541&y=-275&keyword=ulises
+Stack Trace:
+#0 C:\wamp\www\cakephp2.3.6\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Maximum executi...', 'C:\wamp\www\cak...', 460)
+#1 [internal function]: ErrorHandler::handleError(1, 'Maximum executi...', 'C:\wamp\www\cak...', 460, Array)
+#2 C:\wamp\www\cakephp2.3.6\lib\Cake\Core\App.php(927): call_user_func('ErrorHandler::h...', 1, 'Maximum executi...', 'C:\wamp\www\cak...', 460, Array)
+#3 C:\wamp\www\cakephp2.3.6\lib\Cake\Core\App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-27 19:48:00 Error: [MissingControllerException] Controller class Config.xmlController could not be found.
+Exception Attributes: array (
+  'class' => 'Config.xmlController',
+  'plugin' => NULL,
+)
+Request URL: /alice/config.xml
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-27 19:49:31 Error: [MissingControllerException] Controller class Config.xmlController could not be found.
+Exception Attributes: array (
+  'class' => 'Config.xmlController',
+  'plugin' => NULL,
+)
+Request URL: /alice/config.xml
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-27 19:50:59 Error: [MissingControllerException] Controller class Config.xmlController could not be found.
+Exception Attributes: array (
+  'class' => 'Config.xmlController',
+  'plugin' => NULL,
+)
+Request URL: /alice/config.xml
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-27 19:53:25 Error: [MissingControllerException] Controller class Config.xmlController could not be found.
+Exception Attributes: array (
+  'class' => 'Config.xmlController',
+  'plugin' => NULL,
+)
+Request URL: /alice/admin/config.xml
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+>>>>>>> 906efc03f7f19c5ce77cc882a6f7905be005a535
 =======
 2013-11-27 20:43:05 Error: [MissingTableException] Table news for model News was not found in datasource default.
 Exception Attributes: array (
@@ -1108,3 +1157,39 @@ Stack Trace:
 #8 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #9 {main}
 >>>>>>> 11564ae318c86341af6bb07f7f7655053f1710ce
+<<<<<<< HEAD
+=======
+2013-11-27 22:13:12 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /alice/images/uploadifive-cancel.png
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-27 22:34:48 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1, `Edition`.`created` DESC, `Edition`.`id` DESC  LIMIT 1' at line 1
+Request URL: /alice/
+Stack Trace:
+#0 C:\wamp\www\cakephp2.3.6\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 C:\wamp\www\cakephp2.3.6\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `Edition...', Array)
+#2 C:\wamp\www\cakephp2.3.6\lib\Cake\Model\Datasource\DboSource.php(669): DboSource->execute('SELECT `Edition...', Array, Array)
+#3 C:\wamp\www\cakephp2.3.6\lib\Cake\Model\Datasource\DboSource.php(1080): DboSource->fetchAll('SELECT `Edition...', false)
+#4 C:\wamp\www\cakephp2.3.6\lib\Cake\Model\Model.php(2696): DboSource->read(Object(Edition), Array)
+#5 C:\wamp\www\alice\Controller\HomeController.php(24): Model->find('first', Array)
+#6 [internal function]: HomeController->index()
+#7 C:\wamp\www\cakephp2.3.6\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(HomeController), Array)
+#8 C:\wamp\www\cakephp2.3.6\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 C:\wamp\www\cakephp2.3.6\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(HomeController), Object(CakeRequest), Object(CakeResponse))
+#10 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-11-28 17:30:52 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /alice/images/uploadifive-cancel.png
+Stack Trace:
+#0 C:\wamp\www\alice\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+>>>>>>> 906efc03f7f19c5ce77cc882a6f7905be005a535

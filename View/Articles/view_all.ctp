@@ -5,6 +5,27 @@
 		<div class="editTop">
 			<div class="editL large-9 columns">
 				<div class="intoEdit row">
+					<?php if (!empty($perfil)): ?>
+
+						<div class="perfilAuthor columns">
+							<?php if (!empty($perfil['Image']['id'])): ?>
+								<div class="large-3 image">
+									<?php echo $this->Html->image(
+										'/files/'.$perfil['Image']['seccion'].'/'.$perfil['Image']['id'].'.'.$perfil['Image']['extension']
+									); ?>
+								</div>
+							<?php endif ?>
+							<?php if (!empty($perfil['Editor']['perfil'])): ?>
+								<div class="large-9 text">
+									<h3><?php echo $perfil['Editor']['nombre']; ?></h3>
+									<div class="content">
+										<?php echo $perfil['Editor']['perfil']; ?>
+									</div>
+								</div>
+							<?php endif ?>
+						</div>
+						
+					<?php endif ?>
 					<div class="artsInto allArt columns">
 						<?php foreach ($articles as $aS): ?>
 							<div class="art">
@@ -31,14 +52,18 @@
 									    	);
 						    			} ?>
 									</div>
-									<div class="content">
-										<h2><?php echo $aS['Article']['titulo']; ?></h2>
-										<span class="editor"><?php echo $aS['Editor']['nombre']; ?></span>
-										<div class="text">
-											<?php echo $aS['Article']['intro']; ?>
-										</div>
-									</div>
 								</a>
+								<div class="content">
+									<a href="<?php echo ($aS['Article']['albume_id']==0)?$this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$aS['Article']['id'].'-'.$aS['Article']['permalink'])):$this->Html->url(array('controller'=>'Galery','action'=>'view','title'=>$aS['Albume']['id'].'-'.$aS['Albume']['permalink'])); ?>">
+										<h2><?php echo $aS['Article']['titulo']; ?></h2>
+									</a>
+									<a href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'viewAll?author='.$aS['Editor']['permalink'])); ?>">
+										<span class="editor"><?php echo $aS['Editor']['nombre']; ?></span>
+									</a>
+									<div class="text">
+										<?php echo $aS['Article']['intro']; ?>
+									</div>
+								</div>
 								<div class="clear"></div>
 							</div>
 						<?php endforeach ?>
@@ -51,6 +76,9 @@
 	                <?php
 	                if ($categoria != '') {
 			        	$options['url'] = array_merge($this->passedArgs, array('?'=> 'categoria='.$categoria)); 
+			        	$this->paginator->options($options); 	             
+			        } elseif ($author != '') {
+			        	$options['url'] = array_merge($this->passedArgs, array('?'=> 'author='.$author)); 
 			        	$this->paginator->options($options); 	             
 			        }
 	                echo $this->Paginator->prev('«', null, null, array('class' => 'disabled prev'));

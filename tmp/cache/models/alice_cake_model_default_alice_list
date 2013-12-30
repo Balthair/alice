@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 1384444371
 =======
 1384471264
@@ -9,3 +10,7 @@ a:12:{i:0;s:6:"abouts";i:1;s:3:"ads";i:2;s:7:"albumes";i:3;s:8:"articles";i:4;s:
 1385587086
 a:12:{i:0;s:6:"abouts";i:1;s:3:"ads";i:2;s:7:"albumes";i:3;s:8:"articles";i:4;s:10:"categorias";i:5;s:8:"editions";i:6;s:7:"editors";i:7;s:6:"images";i:8;s:13:"photographers";i:9;s:11:"relevancias";i:10;s:5:"users";i:11;s:6:"videos";}
 >>>>>>> 11564ae318c86341af6bb07f7f7655053f1710ce
+=======
+1385661772
+a:13:{i:0;s:6:"abouts";i:1;s:3:"ads";i:2;s:7:"albumes";i:3;s:8:"articles";i:4;s:10:"categorias";i:5;s:8:"editions";i:6;s:7:"editors";i:7;s:6:"images";i:8;s:4:"news";i:9;s:13:"photographers";i:10;s:11:"relevancias";i:11;s:5:"users";i:12;s:6:"videos";}
+>>>>>>> 906efc03f7f19c5ce77cc882a6f7905be005a535

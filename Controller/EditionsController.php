@@ -158,6 +158,9 @@ class EditionsController extends AppController {
 		$lastEdition = $this->Edition->find(
 			'first',
 			array(
+				'conditions' => array(
+					'Edition.estado' => 1
+				),
 				'order' => array(
 					'Edition.created' => 'DESC',
 					'Edition.id' => 'DESC'
@@ -193,7 +196,8 @@ class EditionsController extends AppController {
 			$editions = $this->paginate(
 				'Edition',
 				array(
-					'Edition.id !=' => $lastEdition['Edition']['id']
+					'Edition.id !=' => $lastEdition['Edition']['id'],
+					'Edition.estado' => 1
 				)
 			);
 
@@ -284,6 +288,7 @@ class EditionsController extends AppController {
 					'all',
 					array(
 						'conditions' => array(
+							'Edition.estado' => 1,
 							'Edition.id !=' => $edition['Edition']['id']
 						),
 						'order' => array(

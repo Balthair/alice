@@ -173,6 +173,10 @@ ul {
 			margin-top: -5px;
 		}
 
+		.art .content h2:hover {
+			text-decoration: underline;
+		}
+
 		.art .content .editor {
 			background: url('../img/editor.png') no-repeat center left;
 			color: #f47321;
@@ -180,6 +184,10 @@ ul {
 			float: left;
 			margin-bottom: 0.5em;
 			padding-left: 1.5em;
+		}
+
+		.art .content .editor:hover {
+			text-decoration: underline;
 		}
 
 		.art .content .photo {
@@ -237,6 +245,10 @@ ul {
 			padding-right: 2em;
 		}
 
+		.artsInto .art .content h2:hover {
+			text-decoration: underline;
+		}
+
 .article-title span {
 	font-size: 3em;
 	font-weight: bold;
@@ -263,9 +275,14 @@ ul {
 	}
 
 		.asideB .title span {
+			color: #000;
 			font-family: 'PlayfairDisplayRegular';
 			font-size: 1.8em;
 			font-weight: bold;
+		}
+
+		.asideB .title span:hover {
+			text-decoration: underline;
 		}
 
 .authorShare, .intoEdit .title, .editShare {
@@ -882,6 +899,34 @@ li.otherB:last-child {}
 	color: #fff;
 }
 
+.perfilAuthor {
+	margin-bottom: 1.5em;
+}
+
+	.perfilAuthor .image {
+		border-right: 1px dotted #cdcdcd;
+		float: left;
+		padding-right: 0.75em;
+	}
+
+	.perfilAuthor .text {
+		float: left;
+		padding-left: 0.75em;
+	}
+
+		.perfilAuthor .text h3 {
+			font-family: 'PlayfairDisplayRegular';
+			margin-bottom: 0.8em;
+		}
+
+		.perfilAuthor .text .content {
+			font-size: 1.125em;
+		}
+
+			.perfilAuthor .text .content p {
+				margin-bottom: 0.75em;
+			}
+
 .photo {
 	font-size: 0.875em;
 }
@@ -898,6 +943,7 @@ li.otherB:last-child {}
 
 .pub-horizontal {
 	max-width: 960px;
+	min-height: 180px;
 	width: 100%;
 }
 
@@ -1228,6 +1274,10 @@ li.otherB:last-child {}
 	.paddingV {
 		padding: 1em 0;
 	}
+
+	.pub-horizontal {
+		min-height: 144px;
+	}
 }
 
 @media only screen and (max-width: 480px) {
@@ -1413,6 +1463,10 @@ li.otherB:last-child {}
 		width: 50%;
 	}
 
+	.pub-horizontal {
+		min-height: 90px;
+	}
+
 	.video:nth-child(2n+1) {
 		clear: both;
 	}
@@ -1512,6 +1566,10 @@ li.otherB:last-child {}
 
 	.searchForm .inputSearch {
 		width: 270px;
+	}
+
+	.pub-horizontal {
+		min-height: 60px;
 	}
 
 	.video {

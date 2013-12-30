@@ -100,14 +100,18 @@
 					    			}
 					    			?>
 								</div>
-								<div class="content">
-									<h2><?php echo $lA['Article']['titulo']; ?></h2>
-									<span class="editor"><?php echo $lA['Editor']['nombre']; ?></span>
-									<div class="text">
-										<?php echo $lA['Article']['intro']; ?>
-									</div>
-								</div>
 							</a>
+							<div class="content">
+								<a href="<?php echo ($lA['Article']['albume_id']==0)?$this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$lA['Article']['id'].'-'.$lA['Article']['permalink'])):$this->Html->url(array('controller'=>'Galery','action'=>'view','title'=>$lA['Albume']['id'].'-'.$lA['Albume']['permalink'])); ?>">
+									<h2><?php echo $lA['Article']['titulo']; ?></h2>
+								</a>
+								<a href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'viewAll?author='.$lA['Editor']['permalink'])); ?>">
+									<span class="editor"><?php echo $lA['Editor']['nombre']; ?></span>
+								</a>
+								<div class="text">
+									<?php echo $lA['Article']['intro']; ?>
+								</div>
+							</div>
 							<div class="clear"></div>
 						</div>
 					<?php endforeach ?>
