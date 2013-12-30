@@ -48,7 +48,7 @@ class EditionsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Edition->create();
 			$this->request->data['Edition']['permalink'] = $this->Funciones->generatePermalink($this->request->data['Edition']['nombre']);
-			$this->request->data['Edition']['created'] = CakeTime::format('Y-m-d 00:00:00', time());
+			$this->request->data['Edition']['created'] = CakeTime::format('Y-m-d h:i:00', time());
 			$this->request->data['Edition']['user_id'] = $this->Auth->user('id');
 			$this->Edition->id = @$this->Edition->find(
 				'first',
@@ -88,6 +88,7 @@ class EditionsController extends AppController {
 			throw new NotFoundException(__('Invalid edition'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
+			$this->request->data['Edition']['created'] = CakeTime::format('Y-m-d h:i:00', time());
 			if ($this->Edition->save($this->request->data)) {
 				$this->Session->setFlash(__('The edition has been saved'));
 				$this->redirect(array('action' => 'index'));

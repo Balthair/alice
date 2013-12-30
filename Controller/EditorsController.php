@@ -45,6 +45,13 @@ class EditorsController extends AppController {
 			$this->request->data['Editor']['permalink'] = $this->Funciones->generatePermalink($this->request->data['Editor']['nombre']);
 			$this->request->data['Editor']['user_id'] = $this->Auth->user('id');
 			$this->Editor->create();
+			$this->Editor->id = @$this->Editor->find(
+				'first',
+				array(
+					'conditions'=>array('Editor.user_id'=>$this->Auth->user('id'),'Editor.nombre'=>''),
+					'fields' => 'Editor.id'
+				)
+			);
 			if ($this->Editor->save($this->request->data)) {
 				$this->Session->setFlash(__('The editor has been saved'));
 				$this->redirect(array('action' => 'index'));

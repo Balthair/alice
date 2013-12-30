@@ -5,7 +5,53 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('nombre',array('class'=>'form-control'));
+		echo $this->Form->input('perfil',array('class'=>'form-control'));
 	?>
+	<div class="head_upload">
+		<input id="file_upload" name="file_upload" type="file" multiple="false">
+		<a class="upload_all btn btn-success" style="position: relative;" href="javascript:$('#file_upload').uploadifive('upload')" title="Subir Archivos">
+			<span class="glyphicon glyphicon-open"></span>
+		</a>
+	</div>
+	<div id="queue">
+		<div class="print_images">
+			<?php
+			if (isset($this->request->data['Image'])) {
+				$src = $this->request->data['Image']['seccion'].'/'.$this->request->data['Image']['id'].'.'.$this->request->data['Image']['extension'];
+				if (file_exists(Configure::read('absolute_root').$src)) {
+					echo $this->Html->tag(
+						'div',
+						$this->Html->image(
+							'/files/'.$src  ,
+							array(
+								'class' => 'pic'
+							)
+						).
+						$this->Html->link(
+							$this->Html->image(
+								'admin/delete.png',
+								array(
+									'style' => 'position:absolute;right:10px;top:10px',
+									'class' => 'icon_control'
+								)
+							),
+							'/upload/delete_imagen/'.$this->request->data['Image']['id'],
+							array(
+								'class' => 'drop',
+								'escape' => false,
+								'data' => $this->request->data['Image']['id']
+							)	
+						),
+						array(
+							'class' => 'pic_wrapper',
+							'id' => $this->request->data['Image']['id']
+						)
+					);
+				}
+			}
+			?>
+		</div>
+	</div>
 	</fieldset>
 <?php echo $this->Form->end(array('label'=>__('Guardar'),'class'=>'btn btn-success')); ?>
 </div>
@@ -19,3 +65,36 @@
 		<li><?php echo $this->Html->link(__('New Article'), array('controller' => 'articles', 'action' => 'add'),array('class'=>'btn btn-success')); ?> </li>
 	</ul>
 </div>
+
+
+<script type="text/javascript">
+	<?php 
+	$timestamp = time();
+	$seccion = base64_encode('editors');
+	$url = $this->Html->url('/upload/Upload_File/?seccion='.$seccion);
+	$check = $this->Html->url('/upload/check_exists/?seccion='.$seccion);
+	$img = @$this->request->data['Editor']['id'];
+	?>
+	$(function() {
+
+		$('#file_upload').uploadifive({
+			'auto'             : false,
+			'checkScript'      : '<?php echo $check ?>',
+			'formData'         : {
+								   'timestamp' : '<?php echo $timestamp;?>',
+								   'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
+			                     },
+			'queueID'          : 'queue',
+			'uploadScript'     : '<?php echo $url."&img=".$img."&multi=true" ?>',
+			'onUploadComplete' : function(file, data) { 
+				
+				$('.print_images').empty();
+
+				$('.print_images').append(data);
+
+			}
+		});
+
+		$('.drop').delete_img();
+	});
+</script>

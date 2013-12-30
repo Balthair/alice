@@ -95,7 +95,7 @@
 				?>
 				<form method="GET" action="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'viewAll')); ?>" class="searchForm">
 					<?php echo $this->Form->submit('search.png'); ?>
-					<input type="text" id="keyword" placeholder="Buscar Articulo..." name="keyword" class="inputSearch"/>
+					<input type="text" id="keyword" placeholder="Buscar Art&iacute;culo..." name="keyword" class="inputSearch"/>
 				</form>
 				<h2><?php echo $title_for_section; ?></h2>
 				<div class="clear"></div>

@@ -67,7 +67,7 @@
 <script type="text/javascript">
 	<?php 
 	$timestamp = time();
-	$seccion = base64_encode('Albumes');
+	$seccion = base64_encode('albumes');
 	$url = $this->Html->url('/upload/Upload_File/?seccion='.$seccion);
 	$check = $this->Html->url('/upload/check_exists/?seccion='.$seccion);
 

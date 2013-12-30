@@ -1,0 +1,44 @@
+2013-11-26 22:13:15 Debug: Notice (8): Undefined offset: 0 in [C:\wamp\www\alice\View\Galery\view.ctp, line 53]
+Trace:
+include - APP\View\Galery\view.ctp, line 53
+View::_evaluate() - CORE\Cake\View\View.php, line 947
+View::_render() - CORE\Cake\View\View.php, line 909
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 948
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 194
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 162
+[main] - APP\webroot\index.php, line 110
+
+2013-11-26 22:13:15 Debug: Notice (8): Undefined offset: 0 in [C:\wamp\www\alice\View\Galery\view.ctp, line 53]
+Trace:
+include - APP\View\Galery\view.ctp, line 53
+View::_evaluate() - CORE\Cake\View\View.php, line 947
+View::_render() - CORE\Cake\View\View.php, line 909
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 948
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 194
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 162
+[main] - APP\webroot\index.php, line 110
+
+2013-11-26 22:13:15 Debug: Notice (8): Undefined offset: 0 in [C:\wamp\www\alice\View\Galery\view.ctp, line 53]
+Trace:
+include - APP\View\Galery\view.ctp, line 53
+View::_evaluate() - CORE\Cake\View\View.php, line 947
+View::_render() - CORE\Cake\View\View.php, line 909
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 948
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 194
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 162
+[main] - APP\webroot\index.php, line 110
+
+2013-11-27 20:50:47 Debug: Notice (8): Undefined offset: 0 in [C:\wamp\www\alice\View\Editors\admin_edit.ctp, line 20]
+Trace:
+include - APP\View\Editors\admin_edit.ctp, line 20
+View::_evaluate() - CORE\Cake\View\View.php, line 947
+View::_render() - CORE\Cake\View\View.php, line 909
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 948
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 194
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 162
+[main] - APP\webroot\index.php, line 110
+

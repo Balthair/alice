@@ -9,9 +9,9 @@
 		echo $this->Form->input('password',array('class'=>'form-control'));
 		echo $this->Form->input('role',array('class'=>'form-control'));
 
-		echo $this->Form->input('username');
+		/*echo $this->Form->input('username');
 		echo $this->Form->input('password');
-		echo $this->Form->input('role');
+		echo $this->Form->input('role');*/
 
 	?>
 	</fieldset>

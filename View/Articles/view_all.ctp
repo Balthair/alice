@@ -8,7 +8,7 @@
 					<div class="artsInto allArt columns">
 						<?php foreach ($articles as $aS): ?>
 							<div class="art">
-								<a href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$aS['Article']['id'].'-'.$aS['Article']['permalink'])); ?>">
+								<a href="<?php echo ($aS['Article']['albume_id']==0)?$this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$aS['Article']['id'].'-'.$aS['Article']['permalink'])):$this->Html->url(array('controller'=>'Galery','action'=>'view','title'=>$aS['Albume']['id'].'-'.$aS['Albume']['permalink'])); ?>">
 									<div class="image">
 										<?php
 										if (!empty($aS['Image'])) {
@@ -27,7 +27,7 @@
 									    	);
 									    } else {
 						    				echo $this->Html->image(
-									    		'/files/defaultSmall.png'
+									    		'/files/defaultSmall.jpg'
 									    	);
 						    			} ?>
 									</div>
@@ -35,7 +35,7 @@
 										<h2><?php echo $aS['Article']['titulo']; ?></h2>
 										<span class="editor"><?php echo $aS['Editor']['nombre']; ?></span>
 										<div class="text">
-											<?php echo $this->Text->truncate($aS['Article']['intro'], 200); ?>
+											<?php echo $aS['Article']['intro']; ?>
 										</div>
 									</div>
 								</a>

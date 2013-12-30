@@ -3,6 +3,7 @@
 	<?php if (isset($article) and !empty($article) and $article != ''): ?>
 		
 		<section class="articleInto large-9 columns">
+			<h1><?php echo $article['Article']['titulo']; ?></h1>
 			<div class="share">
 				<div class="fb-like" data-href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$article['Article']['id'].'-'.$article['Article']['permalink']),true); ?>" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
 				<div class="twitter">
@@ -33,11 +34,17 @@
 					?>
 					<img src="<?php echo $this->Html->url('/files/'.$srcLarge); ?>" data-interchange="[<?php echo $this->Html->url('/files/'.$srcSmall); ?>, (only screen and (min-width: 1px))], [<?php echo $this->Html->url('/files/'.$srcLarge); ?>, (only screen and (min-width: 769px))]">
 				</div>
+				<?php if (!empty($article['Photographer']['nombre'])): ?>
+					<span class="photo">Fotograf&iacute;a: <?php echo $article['Photographer']['nombre']; ?></span>
+				<?php endif ?>
 			<?php endif ?>
 			<div class="intro">
 				<?php echo $article['Article']['intro']; ?>
 			</div>
-			<article class="artText">
+			<div class="nameEdit">
+				<span><?php echo $article['Edition']['nombre']; ?></span>
+			</div>
+			<article id="artText" class="artText">
 				<?php echo $article['Article']['contenido']; ?>
 			</article>
 			<div class="fb-comments" data-href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$article['Article']['id'].'-'.$article['Article']['permalink']),true); ?>" data-numposts="5" data-width="935"></div>
@@ -47,7 +54,7 @@
 				<span class="title">Otros art&iacute;culos de la edici&oacute;n</span>
 				<div>
 					<?php foreach ($moreOfEdition as $E): ?>
-						<a class="other" href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$E['Article']['id'].'-'.$E['Article']['permalink'])); ?>">
+						<a class="other" href="<?php echo ($E['Article']['albume_id']==0)?$this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$E['Article']['id'].'-'.$E['Article']['permalink'])):$this->Html->url(array('controller'=>'Galery','action'=>'view','title'=>$E['Albume']['id'].'-'.$E['Albume']['permalink'])); ?>">
 							<div class="image">
 								<?php
 								$widthSmall = 1280;
@@ -91,13 +98,13 @@
 		<div class="clear"></div>
 		<aside class="asideB">
 			<div class="title columns">
-				<span>Otros articulos del Autor</span>
+				<span>Otros art&iacute;culos del autor</span>
 			</div>
 			<div class="content columns">
 				<ul>
 					<?php foreach ($moreOfEditor as $Ed): ?>
 						<li class="otherB">
-							<a href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$Ed['Article']['id'].'-'.$Ed['Article']['permalink'])); ?>">
+							<a href="<?php echo ($Ed['Article']['albume_id']==0)?$this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$Ed['Article']['id'].'-'.$Ed['Article']['permalink'])):$this->Html->url(array('controller'=>'Galery','action'=>'view','title'=>$Ed['Albume']['id'].'-'.$Ed['Albume']['permalink'])); ?>">
 								<?php
 								$widthSmall = 1280;
 								foreach ($Ed['Image'] as $I) {

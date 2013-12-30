@@ -1,10 +1,10 @@
 <div id="slide">
-	<ul data-orbit data-options="variable_height:true;bullets:false;timer_speed:4000;resume_on_mouseout: true;slide_number: false;">
+	<ul data-orbit data-options="variable_height:true;bullets:false;timer_speed:6000;resume_on_mouseout: true;slide_number: false;">
 		<?php if (is_array($lastArticles)): ?>
 			
 			<?php foreach ($lastArticles as $lA): ?>
 			  	<li>		
-			    	<a href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$lA['Article']['id'].'-'.$lA['Article']['permalink'])); ?>">
+			    	<a href="<?php echo ($lA['Article']['albume_id']==0)?$this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$lA['Article']['id'].'-'.$lA['Article']['permalink'])):$this->Html->url(array('controller'=>'Galery','action'=>'view','title'=>$lA['Albume']['id'].'-'.$lA['Albume']['permalink'])); ?>">
 			    		<div class="image">
 			    			<?php
 			    			if (!empty($lA['Image'])) {
@@ -58,7 +58,7 @@
 	<?php if (!empty($lastArticles)): ?>
 
 		<div class="article-title">
-			<span>Articulos</span>
+			<span>Art&iacute;culos</span>
 		</div>
 		<div class="articles">
 			<script type="text/javascript">
@@ -74,14 +74,14 @@
 					
 					<?php foreach ($lastArticles as $lA): ?>
 						<div class="art">
-							<a href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$lA['Article']['id'].'-'.$lA['Article']['permalink'])); ?>">
+							<a href="<?php echo ($lA['Article']['albume_id']==0)?$this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$lA['Article']['id'].'-'.$lA['Article']['permalink'])):$this->Html->url(array('controller'=>'Galery','action'=>'view','title'=>$lA['Albume']['id'].'-'.$lA['Albume']['permalink'])); ?>">
 								<div class="image">
 									<?php
 									if (!empty($lA['Image'])) {
 										$widthSmall = 1280;
 										foreach ($lA['Image'] as $I) {
 											$src = $I['id'].'.'.$I['extension'];
-											$this->Image->imagen(Configure::read('absolute_root').'Articles/'.$src);
+											$this->Image->imagen(Configure::read('absolute_root').'articles/'.$src);
 											$widthImg = $this->Image->image_width;
 											if ($widthImg < $widthSmall) {
 												$srcSmall = $src;
@@ -90,7 +90,7 @@
 										}
 
 										echo $this->Html->image(
-								    		'/files/Articles/'.'thumbs/'.$srcSmall
+								    		'/files/articles/'.'thumbs/'.$srcSmall
 								    	);
 
 									} else {
@@ -104,7 +104,7 @@
 									<h2><?php echo $lA['Article']['titulo']; ?></h2>
 									<span class="editor"><?php echo $lA['Editor']['nombre']; ?></span>
 									<div class="text">
-										<?php echo $this->Text->truncate($lA['Article']['intro'], 200); ?>
+										<?php echo $lA['Article']['intro']; ?>
 									</div>
 								</div>
 							</a>
@@ -156,7 +156,7 @@
 			<?php foreach ($lastEditions as $lE): ?>
 				<div class="large-4 small-4 columns edition">
 					<?php echo $this->Html->image(
-			    		'/files/'.$lE['Image']['seccion'].'/'.$lE['Image']['id'].'.'.$lE['Image']['extension'],
+			    		'/files/'.$lE['Image']['seccion'].'/thumbs/'.$lE['Image']['id'].'.'.$lE['Image']['extension'],
 			    		array(
 			    			'alt' => $lE['Edition']['nombre'],
 			    			'url' => array(

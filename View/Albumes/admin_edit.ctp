@@ -5,6 +5,7 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('nombre',array('class'=>'form-control'));
+		echo $this->Form->input('photographer_id',array('class'=>'form-control'));
 		echo $this->Form->input('descripcion',array('class'=>'form-control'));
 	?>
 	</fieldset>

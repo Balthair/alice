@@ -29,7 +29,7 @@
 						
 						<?php foreach ($articles as $a): ?>
 						  	<li>		
-						    	<a href="<?php echo $this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$a['Article']['id'].'-'.$a['Article']['permalink'])); ?>">
+						    	<a href="<?php echo ($a['Article']['albume_id']==0)?$this->Html->url(array('controller'=>'Articles','action'=>'view','title'=>$a['Article']['id'].'-'.$a['Article']['permalink'])):$this->Html->url(array('controller'=>'Galery','action'=>'view','title'=>$a['Albume']['id'].'-'.$a['Albume']['permalink'])); ?>">
 						    		<div class="image">
 						    			<?php
 										$widthLarge = 0;

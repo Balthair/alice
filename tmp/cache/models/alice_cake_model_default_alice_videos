@@ -1,6 +1,17 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 1384443484
 =======
 1384452369
 >>>>>>> 346cee4f141b70df11176dac55112e52d3edcf16
+=======
+1385152476
+=======
+<<<<<<< HEAD
+1384452369
+=======
+1384443484
+>>>>>>> 8494ca92bde54f80cf7e749e88e0d5edafafcf77
+>>>>>>> 7d62c4da32267bb0daa5bc6f4e1e149748dc788a
+>>>>>>> 11564ae318c86341af6bb07f7f7655053f1710ce
 a:3:{s:2:"id";a:5:{s:4:"type";s:7:"integer";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:11;s:3:"key";s:7:"primary";}s:3:"url";a:6:{s:4:"type";s:6:"string";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:255;s:7:"collate";s:15:"utf8_general_ci";s:7:"charset";s:4:"utf8";}s:6:"titulo";a:6:{s:4:"type";s:6:"string";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:100;s:7:"collate";s:15:"utf8_general_ci";s:7:"charset";s:4:"utf8";}}

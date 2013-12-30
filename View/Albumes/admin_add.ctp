@@ -4,6 +4,7 @@
 		<legend><?php echo __('Add Albume'); ?></legend>
 	<?php
 		echo $this->Form->input('nombre',array('class'=>'form-control'));
+		echo $this->Form->input('photographer_id',array('class'=>'form-control'));
 		echo $this->Form->input('descripcion',array('class'=>'form-control'));
 	?>
 	</fieldset>

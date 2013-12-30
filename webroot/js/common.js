@@ -15,3 +15,7 @@
 	}
 
 })(jQuery, window)
+
+$(function() {
+	$('#artText').children().eq(0).addClass('CapitalLetter');
+});

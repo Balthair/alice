@@ -5,11 +5,17 @@
 		<div class="galeryCont">
 			<div class="large-12 columns">
 				<h1><?php echo $galery['Albume']['nombre']; ?></h1>
+				<div class="textG">
+					<?php echo $galery['Albume']['descripcion']; ?>
+				</div>
 				<div class="share">
 					<div class="fb-like" data-href="<?php echo $this->Html->url(array('controller'=>'Galery','action'=>'view','title'=>$galery['Albume']['id'].'-'.$galery['Albume']['permalink']),true); ?>" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
 					<div class="twitter">
 						<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
 					</div>
+				</div>
+				<div class="artAuthor">
+					<span>Por: <?php echo $galery['Photographer']['nombre']; ?></span>
 				</div>
 				<?php foreach ($galery['Image'] as $Img) {
 

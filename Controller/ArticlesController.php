@@ -48,6 +48,10 @@ class ArticlesController extends AppController {
 			$this->request->data['Article']['permalink'] = $this->Funciones->generatePermalink($this->request->data['Article']['titulo']);
 			$this->request->data['Article']['created'] = CakeTime::format('Y-m-d 00:00:00', time());
 			$this->request->data['Article']['user_id'] = $this->Auth->user('id');
+			//Comprobamos si es un fotomontaje y si lo es guardamos el id de la galeria a la que pertenece.
+			if($this->request->data['Article']['categoria_id']!=5) 
+				$this->request->data['Article']['albume_id'] = 0;
+
 			$this->Article->id = @$this->Article->find(
 				'first',
 				array(
@@ -74,7 +78,9 @@ class ArticlesController extends AppController {
 		$categorias = $this->Article->Categoria->find('list');
 		$relevancias = $this->Article->Relevancia->find('list');
 		$users = $this->Article->User->find('list');
-		$this->set(compact('editors', 'editions', 'categorias', 'relevancias', 'users'));
+		//$this->loadModel('Albume');
+		$albumes = $this->Article->Albume->find('list');
+		$this->set(compact('editors', 'editions', 'categorias', 'relevancias', 'users','albumes'));
 	}
 
 /**
@@ -90,6 +96,10 @@ class ArticlesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			$this->request->data['Article']['permalink'] = $this->Funciones->generatePermalink($this->request->data['Article']['titulo']);
+			//Comprobamos si es un fotomontaje y si lo es guardamos el id de la galeria a la que pertenece.
+			if($this->request->data['Article']['categoria_id']!=5) 
+				$this->request->data['Article']['albume_id'] = 0;
+			
 			if ($this->Article->save($this->request->data)) {
 				$this->Session->setFlash(__('The article has been saved'));
 				$this->redirect(array('action' => 'index'));
@@ -105,7 +115,8 @@ class ArticlesController extends AppController {
 		$categorias = $this->Article->Categoria->find('list');
 		$relevancias = $this->Article->Relevancia->find('list');
 		$users = $this->Article->User->find('list');
-		$this->set(compact('editors', 'editions', 'categorias', 'relevancias', 'users'));
+		$albumes = $this->Article->Albume->find('list');
+		$this->set(compact('editors', 'editions', 'categorias', 'relevancias', 'users','albumes'));
 	}
 
 /**
@@ -216,7 +227,7 @@ class ArticlesController extends AppController {
             $articles = $this->paginate(
                 'Article',
                 array(
-                    'CONCAT(titulo, intro) LIKE "%'.$pclave.'%"'
+                    'CONCAT(Article.titulo, Article.intro, Editor.nombre) LIKE "%'.$pclave.'%"'
                 )
             );
 
@@ -299,6 +310,7 @@ class ArticlesController extends AppController {
 							'Article.estado' => 1,
 							'Article.edition_id' => $article['Article']['edition_id'],
 							'Article.id !=' => $article['Article']['id'],
+							'Article.categoria_id !=' => 6 
 						),
 						'order' => array(
 							'Article.relevancia_id' => 'ASC',
@@ -315,7 +327,8 @@ class ArticlesController extends AppController {
 							'Article.estado' => 1,
 							'Article.editor_id' => $article['Article']['editor_id'],
 							'Article.edition_id !=' => $article['Article']['edition_id'],
-							'Article.id !=' => $article['Article']['id']
+							'Article.id !=' => $article['Article']['id'],
+							'Article.categoria_id !=' => 6
 						),
 						'order' => array(
 							'Article.relevancia_id' => 'ASC',
@@ -356,7 +369,7 @@ class ArticlesController extends AppController {
 				$this->set(
 					array(
 						'title_for_layout' => $article['Article']['titulo'],
-						'title_for_section' => $article['Article']['titulo'],
+						'title_for_section' => $article['Categoria']['nombre'],
 						'article' => @$article,
 						'moreOfEdition' => @$moreOfEdition,
 						'moreOfEditor' => @$moreOfEditor,

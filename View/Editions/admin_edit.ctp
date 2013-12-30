@@ -52,6 +52,17 @@
 			?>
 		</div>
 	</div>
+	<div class="text input">
+		<?php echo $this->Form->label('Estado'); ?>
+		<label class="switch-light well" onclick="">
+			<?php echo $this->Form->input('estado',array('type'=>'checkbox','label'=>false,'div'=>false)); ?>
+			<span>
+				<span>Off</span>
+				<span>On</span>
+			</span>
+			<a class="btn btn-primary"></a>
+		</label>
+	</div>
 	</fieldset>
 <?php echo $this->Form->end(array('label'=>__('Guardar'),'class'=>'btn btn-success')); ?>
 </div>
@@ -69,7 +80,7 @@
 <script type="text/javascript">
 	<?php 
 	$timestamp = time();
-	$seccion = base64_encode('Editions');
+	$seccion = base64_encode('editions');
 	$url = $this->Html->url('/upload/Upload_File/?seccion='.$seccion);
 	$check = $this->Html->url('/upload/check_exists/?seccion='.$seccion);
 	$img = @$this->request->data['Edition']['id'];

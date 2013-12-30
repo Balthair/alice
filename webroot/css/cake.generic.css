@@ -13,6 +13,7 @@
  * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       app.webroot.css
+ * @since         CakePHP(tm)
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
@@ -116,7 +117,7 @@ div.index,
 div.view {
 	float:right;
 	width:76%;
-	border-left:1px solid #CCC;
+	border-left:1px solid #666;
 	padding:10px 2%;
 }
 div.actions {
@@ -328,7 +329,7 @@ option {
 	font-size: 120%;
 	padding: 0 3px;
 }
-/* input[type=checkbox] {
+input[type=checkbox] {
 	clear: left;
 	float: left;
 	margin: 0px 6px 7px 2px;
@@ -336,7 +337,7 @@ option {
 }
 div.checkbox label {
 	display: inline;
-} */
+}
 input[type=radio] {
 	float:left;
 	width:auto;
@@ -353,7 +354,7 @@ input[type=submit] {
 	font-size: 110%;
 	width: auto;
 }
-/* form .submit input[type=submit] {
+form .submit input[type=submit] {
 	background:#62af56;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#76BF6B), to(#3B8230));
 	background-image: -webkit-linear-gradient(top, #76BF6B, #3B8230);
@@ -365,7 +366,7 @@ input[type=submit] {
 }
 form .submit input[type=submit]:hover {
 	background: #5BA150;
-} */
+}
 /* Form errors */
 form .error {
 	background: #FFDACC;
@@ -504,7 +505,7 @@ p.error em {
 }
 
 /* Buttons and button links */
-/* input[type=submit],
+input[type=submit],
 .actions ul li a,
 .actions a {
 	font-weight:normal;
@@ -552,7 +553,7 @@ input[type=submit]:active,
 	box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
 	border-color: #aaa;
 	text-decoration: none;
-} */
+}
 
 /** Related **/
 .related {

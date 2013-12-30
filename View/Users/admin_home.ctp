@@ -27,6 +27,20 @@
     		<a href="<?php echo $this->Html->url('/admin/editions/add'); ?>" class="btn btn-info"><i class="glyphicon glyphicon-plus"></i> Agregar Edición</a>
 		</div>
 	</li>
+	<li>
+		<div class="headWrappers">
+			<div class="glyphiconWrapper">
+				<span class="glyphicon glyphicon-camera"></span>
+			</div>
+			<div class="titleWrapper">
+				<span>Fotografos</span>	
+			</div>
+		</div>
+		<div class="linksWrapper">
+			<a href="<?php echo $this->Html->url('/admin/photographers'); ?>" class="btn btn-info"><i class="glyphicon glyphicon-play"></i> Ver Fotografos</a>
+    		<a href="<?php echo $this->Html->url('/admin/photographers/add'); ?>" class="btn btn-info"><i class="glyphicon glyphicon-plus"></i> Agregar Fotografo</a>
+		</div>
+	</li>
     <li>
 		<div class="headWrappers">
 			<div class="glyphiconWrapper">

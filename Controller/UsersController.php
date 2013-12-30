@@ -40,6 +40,7 @@ class UsersController extends AppController {
  */
 	public function admin_add() {
 		if ($this->request->is('post')) {
+			$this->request->data['User']['password'] = AuthComponent::password($this->request->data['User']['password']);
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash(__('The user has been saved'));
@@ -62,6 +63,7 @@ class UsersController extends AppController {
 			throw new NotFoundException(__('Invalid user'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
+			$this->request->data['User']['password'] = AuthComponent::password($this->request->data['User']['password']);
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash(__('The user has been saved'));
 				$this->redirect(array('action' => 'index'));

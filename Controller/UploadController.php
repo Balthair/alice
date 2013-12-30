@@ -162,7 +162,7 @@ class UploadController extends AppController
                 move_uploaded_file($this->tmp_name, $this->target_File);
 
                 $I = $this->Image->imagen(Configure::read('absolute_root') . $table_name . '/' . $new_name);
-                $this->Image->resize(43);
+                $this->Image->resize(40);
                 $this->Image->saveTo(Configure::read('absolute_root') . $table_name . '/thumbs/' . $registro);
 
 

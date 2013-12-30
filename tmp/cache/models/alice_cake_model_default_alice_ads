@@ -1,6 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 1384444078
 =======
 1384471264
 >>>>>>> 346cee4f141b70df11176dac55112e52d3edcf16
+=======
+1471810449
+>>>>>>> 11564ae318c86341af6bb07f7f7655053f1710ce
 a:6:{s:2:"id";a:5:{s:4:"type";s:7:"integer";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:11;s:3:"key";s:7:"primary";}s:6:"nombre";a:6:{s:4:"type";s:6:"string";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:150;s:7:"collate";s:15:"utf8_general_ci";s:7:"charset";s:4:"utf8";}s:4:"link";a:6:{s:4:"type";s:6:"string";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:150;s:7:"collate";s:15:"utf8_general_ci";s:7:"charset";s:4:"utf8";}s:11:"orientacion";a:6:{s:4:"type";s:6:"string";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:50;s:7:"collate";s:15:"utf8_general_ci";s:7:"charset";s:4:"utf8";}s:6:"bloque";a:6:{s:4:"type";s:6:"string";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:50;s:7:"collate";s:15:"utf8_general_ci";s:7:"charset";s:4:"utf8";}s:7:"user_id";a:4:{s:4:"type";s:7:"integer";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:11;}}

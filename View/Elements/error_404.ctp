@@ -1,5 +1,5 @@
 <div class="error">
-	<h1>Se encontro un problema</h1>
+	<h1>Se encontr&oacute; un problema</h1>
 	<hr>
 	<article class="marco-error padding">
 		<div class="print-error padding">
@@ -10,7 +10,7 @@
 				<span>Disculpe</span>
 				<br/>
 				<br/>
-				<span>Aun no se ha publicado nada en esta secci&oacute;n.</span>
+				<span>A&uacute;n no se ha publicado nada en esta secci&oacute;n.</span>
 			</div>
 		</div>
 	</article>

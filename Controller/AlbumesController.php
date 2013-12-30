@@ -54,6 +54,8 @@ class AlbumesController extends AppController {
 				$this->Session->setFlash(__('The albume could not be saved. Please, try again.'));
 			}
 		}
+		$photographers = $this->Albume->Photographer->find('list');
+		$this->set(compact('photographers'));
 	}
 
 /**
@@ -79,6 +81,8 @@ class AlbumesController extends AppController {
 			$options = array('conditions' => array('Albume.' . $this->Albume->primaryKey => $id));
 			$this->request->data = $this->Albume->find('first', $options);
 		}
+		$photographers = $this->Albume->Photographer->find('list');
+		$this->set(compact('photographers'));
 	}
 
 /**

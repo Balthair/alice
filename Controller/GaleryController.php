@@ -43,6 +43,19 @@ class GaleryController extends AppController {
 				)
 			);
 
+			$pubAlbV = $this->Ad->find(
+				'first',
+				array(
+					'conditions' => array(
+						'Ad.orientacion' => 'vertical',
+						'Ad.bloque' => 'galerias'
+					),
+					'order' => array(
+						'Ad.id' => 'DESC'
+					)
+				)
+			);
+
 		}
 
 		$pubAlbH = $this->Ad->find(
@@ -64,6 +77,7 @@ class GaleryController extends AppController {
 				'title_for_layout' => 'Galerías',
 				'galeryP' => @$galeryP,
 				'galeries' => @$galeries,
+				'pubAlbV' => @$pubAlbV,
 				'pubAlbH' => @$pubAlbH
 			)
 		);
@@ -126,7 +140,7 @@ class GaleryController extends AppController {
 		$this->set(
 			array(
 				'title_for_section' => 'Galerías',
-				'title_for_layout' => 'Galerías',
+				'title_for_layout' => $galery['Albume']['nombre'],
 				'galery' => @$galery,
 				'otherG' => @$otherG,
 				'pubAlbH' => @$pubAlbH

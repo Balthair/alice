@@ -78,7 +78,7 @@
 <script type="text/javascript">
 	<?php 
 	$timestamp = time();
-	$seccion = base64_encode('Ads');
+	$seccion = base64_encode('ads');
 	$url = $this->Html->url('/upload/Upload_File/?seccion='.$seccion);
 	$check = $this->Html->url('/upload/check_exists/?seccion='.$seccion);
 	$img = @$this->request->data['Ad']['id'];

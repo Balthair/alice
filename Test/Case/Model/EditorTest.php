@@ -14,12 +14,15 @@ class EditorTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.editor',
+		'app.user',
 		'app.article',
 		'app.edition',
-		'app.user',
+		'app.image',
 		'app.categoria',
 		'app.news',
-		'app.relevancia'
+		'app.relevancia',
+		'app.albume',
+		'app.photographer'
 	);
 
 /**

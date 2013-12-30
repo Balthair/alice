@@ -28,7 +28,9 @@ class HomeController extends AppController {
 				'all',
 				array(
 					'conditions' => array(
-						'Article.edition_id' => @$lastEdition['Edition']['id']
+						'Article.edition_id' => @$lastEdition['Edition']['id'],
+						'Article.estado' => 1,
+						'Article.categoria_id !=' => 6 
 					),
 					'order' => array(
 						'Article.relevancia_id' => 'ASC',
@@ -153,7 +155,8 @@ class HomeController extends AppController {
 				'pubEdiH' => @$pubEdiH,
 				'pubAlbH' => @$pubAlbH,
 				'pubAlbV' => @$pubAlbV,
-				'pubHome' => @$pubHome
+				'pubHome' => @$pubHome,
+				'title_for_layout' => 'Revista Alice'
 			)
 		);
 

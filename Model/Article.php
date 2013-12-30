@@ -34,7 +34,7 @@ class Article extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'intro' => array(
+		/*'intro' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
 				'message' => 'Este campo es requerido',
@@ -43,7 +43,7 @@ class Article extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
+		),*/
 		'contenido' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
@@ -131,7 +131,7 @@ class Article extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
+		)
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -173,6 +173,13 @@ class Article extends AppModel {
 		'User' => array(
 			'className' => 'User',
 			'foreignKey' => 'user_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Albume' => array(
+			'className' => 'Albume',
+			'foreignKey' => 'albume_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

@@ -65,4 +65,14 @@ class Albume extends AppModel {
 			)
 		)
 	);
+
+	public $belongsTo = array(
+		'Photographer' => array(
+			'className' => 'Photographer',
+			'foreignKey' => 'photographer_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+	);
 }

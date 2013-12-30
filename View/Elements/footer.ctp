@@ -1,20 +1,20 @@
 <div class="large-3 columns">
 	<span class="title-footer">S&iacute;guenos</span>
 	<ul class="">
-  		<li>
+  		<li class="socialF">
   			<?php echo $this->Html->image(
   				'facebook.png',
   				array(
   					'alt' => 'Facebook',
-            'width' => '30px',
-  					'url' => 'http://facebook.com'
+            		'style' => 'width:30px;',
+  					'url' => 'https://www.facebook.com/pages/Revista-Alice/170806799626737'
   				)
       		); ?>
   			<?php echo $this->Html->image(
   				'twitter.png',
   				array(
   					'alt' => 'Twitter',
-            'width' => '30px',
+            		'style' => 'width:30px;',
   					'url' => 'http://twitter.com'
   				)
   			); ?>
@@ -24,6 +24,16 @@
 <div class="large-3 columns">
 	<span class="title-footer">Men&uacute;</span>
 	<ul>
+		<li>
+			<?php
+			echo $this->Html->link(
+				'Inicio',
+				array(
+					'controller' => 'Home'
+				)
+			);
+			?>
+		</li>
 		<li>
 			<?php
 			echo $this->Html->link(
@@ -53,6 +63,17 @@
 				array(
 					'controller' => 'Videos',
 					'action' => 'viewAll'
+				)
+			);
+			?>
+		</li>
+		<li>
+			<?php
+			echo $this->Html->link(
+				'Editorial',
+				array(
+					'controller' => 'Articles',
+					'action' => 'viewAll?categoria=editorial'
 				)
 			);
 			?>
@@ -101,6 +122,17 @@
 			);
 			?>
 		</li>
+		<li>
+			<?php
+			echo $this->Html->link(
+				'Foto Reportajes',
+				array(
+					'controller' => 'Articles',
+					'action' => 'viewAll?categoria=foto-reportajes'
+				)
+			);
+			?>
+		</li>
 	</ul>
 </div>
 <div class="large-3 columns">
@@ -133,7 +165,7 @@
 		<li>
 			<?php
 			echo $this->Html->link(
-				'Terminos de Uso',
+				'Términos de Uso',
 				array(
 					'controller' => 'Abouts',
 					'action' => 'view',
@@ -148,13 +180,16 @@
 	<span class="title-footer">Cont&aacute;ctenos</span>
 	<ul>
 		<li>
-			<span>Bolonia, Managua, Nicaragua</span>
+			<span>Bolonia, Hospital SUMEDICO 3 c. al oeste, Managua</span>
+		</li>
+		<li>
+			<span>C&oacute;digo Postal: LV04</span>
 		</li>
 		<li>
 			<span>+(505) 2266 3722</span></br><span>+(505) 2268 3916</span>
 		</li>
 		<li>
-			<span>alicerevista@gmail.com</span>
+			<span>revista@alice.com.ni</span>
 		</li>
 	</ul>
 </div>

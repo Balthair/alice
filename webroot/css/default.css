@@ -86,6 +86,10 @@ ul {
 	margin-top: 1.5em;
 }
 
+#video object, .flex-video {
+	max-height: 590px;
+}
+
 .artAuthor {
 	background: #f47321;
 	float: right;
@@ -94,9 +98,14 @@ ul {
 
 .artText {
 	font-size: 1.125em;
-	margin-top: 1.25em;
+	margin-top: 2em;
+	padding-left: 1em;
 	text-align: justify;
 }
+
+	.artText ul {
+		padding-left: 2em;
+	}
 
 	.artAuthor span {
 		color: #fff;
@@ -151,7 +160,7 @@ ul {
 
 	.art .content {
 		float: right;
-		height: 115px;
+		/*height: 115px;*/
 		width: 77%;
 	}
 
@@ -168,13 +177,25 @@ ul {
 			background: url('../img/editor.png') no-repeat center left;
 			color: #f47321;
 			display: block;
+			float: left;
 			margin-bottom: 0.5em;
 			padding-left: 1.5em;
 		}
 
+		.art .content .photo {
+			background: url('../img/camera.png') no-repeat center left;
+			color: #f47321;
+			display: block;
+			float: left;
+			margin-bottom: 0.5em;
+			margin-left: 1.5em;
+			padding-left: 1.5em;	
+		}
+
 		.art .content .text {
-			font-size: 0.875em;
+			clear: both;
 			color: #fff;
+			font-size: 0.875em;
 			line-height: 1.4;
 		}
 
@@ -274,6 +295,16 @@ ul {
 		padding: 10px 0;
 	}
 
+.CapitalLetter:first-letter {
+	float: left;
+	color: black;
+	background: white;
+	font-size: 100px;
+	line-height: 80px;
+	padding: 2px;
+	margin-right: 5px;
+}
+
 .clear {
 	clear: both;
 }
@@ -322,6 +353,10 @@ ul {
 	.editTop #slide {
 		margin-top: 0;
 	}
+
+		.editTop #slide .orbit-container {
+			min-height: 420px;
+		}
 
 .edit {
 	margin-top: 1.5em !important;
@@ -451,6 +486,7 @@ ul {
 }
 
 .flex-video {
+	padding-bottom: 53.5%;
 	padding-left: 0.75em;
 	padding-right: 0.75em;
 }
@@ -518,12 +554,17 @@ ul {
 			width: 100%;
 		}
 
-.galeryCont h1, .videoCont h1 {
+.galeryCont h1, .videoCont h1, .articleInto h1 {
 	color: #f47321;
 	font-family: 'PlayfairDisplayRegular';
 	font-size: 3em;
 	line-height: 1;
 	margin: 0;
+}
+
+.articleInto h1 {
+	color: #000;
+	margin-bottom: 0.5em;
 }
 
 .galeryCont #slide .image {
@@ -557,6 +598,14 @@ ul {
 		.galeryCont .orbit-container .orbit-prev, .galeryCont .orbit-container .orbit-next {
 			background-color: rgba(0, 0, 0, 0.6);
 		}
+
+	.galeryCont .textG {
+		float: left;
+		font-size: 1.25em;
+		padding: 1em 0;
+		text-align: justify;
+		width: 100%;
+	}
 
 .galeryBottom, .galeryBottom .otherB, .galBottom .otherB {
 	margin-top: 1.5em;
@@ -624,6 +673,14 @@ ul {
 			font-size: 2.8em;
 		}
 
+	.galeryBottom .pub {
+		margin-top: 1.5em;
+	}
+
+		.galeryBottom .pub img {
+			width: 100%;
+		}
+
 .galImg {
 	border-bottom: 2px solid #fff;
 	padding: 0.75em 0;
@@ -631,6 +688,7 @@ ul {
 }
 
 .intro {
+	color: #999;
 	font-family: 'PlayfairDisplayRegular';
 	font-size: 2em;
 	font-weight: bold;
@@ -653,6 +711,27 @@ ul {
 	max-width: 960px;
 	padding: 1em 0;
 	text-align: right;
+}
+
+.nameEdit {
+	margin-top: 2.5em;
+	padding-left: 1em;
+}
+
+	.nameEdit span {
+		border-bottom: 1px dotted #555;
+		border-top: 1px dotted #555;
+		color: #555;
+		padding: .5em 1em;
+	}
+
+.orbit-container {
+	min-height: 741px;
+}
+
+.orbit-container h2 {
+	color: #000;
+	min-height: 112px;
 }
 
 .orbit-container .orbit-prev, .orbit-container .orbit-next {
@@ -803,6 +882,10 @@ li.otherB:last-child {}
 	color: #fff;
 }
 
+.photo {
+	font-size: 0.875em;
+}
+
 .ps-container .ps-scrollbar-x-rail {
 	display: none;
 }
@@ -910,8 +993,26 @@ li.otherB:last-child {}
 	text-align: right;
 }
 
-	.social img {
-		margin-right: 0.5em;
+	.social img, .socialF img {
+		margin-left: 1em;
+		-webkit-transition: all .25s ease;
+		-moz-transition: all .25s ease;
+		-ms-transition: all .25s ease;
+		transition: all .25s ease;
+	}
+
+	.socialF a {
+		margin-right: 0 !important;
+	}
+
+	.social a:last-child img {
+		margin-right: 1em;
+	}
+
+	.social img:hover, .socialF img:hover {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
 	}
 
 .titleTop {
@@ -942,7 +1043,7 @@ li.otherB:last-child {}
 .top-bar {
 	background: transparent;
 	margin: 0 auto;
-	max-width: 960px;
+	max-width: 1220px;
 }
 
 .top-bar-section ul {
@@ -1061,6 +1162,14 @@ li.otherB:last-child {}
 	.galeryBottom .otherB .image .text h3, .galBottom .otherB .image .text h3 {
 		font-size: 2.5em;
 	}
+
+	.orbit-container {
+		min-height: 618px;
+	}
+
+	.pubHome {
+		display: none;
+	}
 }
 
 @media only screen and (max-width: 768px) {
@@ -1108,6 +1217,10 @@ li.otherB:last-child {}
 		font-size: 1.5em;
 	}
 
+	.orbit-container {
+		min-height: 753px;
+	}
+
 	.other .image, .other .text {
 		width: 100%;
 	}
@@ -1133,6 +1246,10 @@ li.otherB:last-child {}
 			.art .content h2 {
 				margin-top: 0; 	
 			}
+
+		.art .content .photo {
+			margin-left: 0;
+		}
 
 	.articleInto {
 		padding-right: 0;
@@ -1240,6 +1357,15 @@ li.otherB:last-child {}
 		height: 128px;
 	}
 
+	.galeryBottom .pub {
+		margin-top: 1.5em;
+		text-align: center;
+	}
+
+	.galeryBottom .pub img {
+		width: auto;
+	}
+
 	.intro {
 		font-size: 1.5em;
 		padding: 0 0.5em;
@@ -1247,6 +1373,14 @@ li.otherB:last-child {}
 
 	.artText {
 		padding: 0 0.75em;
+	}
+
+	.orbit-container {
+		min-height: 493px;
+	}
+
+	.orbit-container h2 {
+		min-height: 90px;
 	}
 
 	.other .image, .otherB img {
@@ -1363,6 +1497,14 @@ li.otherB:last-child {}
 			padding: 1em 0;
 			width: 100%;
 		}
+
+	.orbit-container {
+		min-height: 390px;
+	}
+
+	.orbit-container h2 {
+		min-height: 112px;
+	}
 
 	.other .text h4, .otherB .title h4 {
 		margin-top: 0;
